@@ -1,0 +1,69 @@
+Unit Testing
+1.  Register View Model
+    A.  Ketika berhasil register
+        * Memastikan value livedata infoMsg = Event.REGISTER_SUCCESS
+    B.  Ketika gagal register
+        * Memastikan value livedata infoMsg.error = true(expectedResponse)
+        * Memastikan value livedata infoMsg.message = errorMessage(expectedResponse)
+
+2.  Login View Model
+    A.  Ketika berhasil login
+        * Memastikan value livedata isLoginSuccess = true
+        * Memastikan value livedata token = tokenExpected
+        * Memastikan value livedata userID = userIDExpected
+        * Memastikan value livedata userName = userNameExpected
+        * Memastikan value livedata errMsg = string kosong
+    B.  Ketika gagal login
+        * Memastikan value livedata isLoginSuccess = false
+        * Memastikan value livedata token = null
+        * Memastikan value livedata userID = null
+        * Memastikan value livedata userName = null
+        * Memastikan value livedata errMsg.error = true(expectedResponse)
+        * Memastikan value livedata errMsg.message = errorMessage(expectedResponse)
+
+3.  Add Story View Model
+    A.  Ketika berhasil add story
+        * Memastikan value livedata isSuccess = true
+        * Memastikan value livedata infoMsg = string kosong
+    B.  Ketika gagal add story
+        * Memastikan value livedata isSuccess = false
+        * Memastikan value livedata infoMsg.error = true(expectedResponse)
+        * Memastikan value livedata infoMsg.message = errorMessage(expectedResponse)
+
+4.  Maps View Model
+    A.  Ketika berhasil get story
+        * Memastikan value livedata infoMsg = string kosong
+        * Memastikan value livedata listStory tidak kosong
+    B.  Ketika gagal get story
+        * Memastikan value livedata infoMsg.error = true(expectedResponse)
+        * Memastikan value livedata infoMsg.message = errorMessage(expectedResponse)
+        * Memastikan value livedata listStory kosong
+
+5.	Home View Model
+    A.	Ketika berhasil memuat data story:
+        * Memastikan data tidak null.
+        * Memastikan jumlah data sesuai dengan yang diharapkan.
+
+6.	Data Repository StoryRemoteMediator
+    A. Ketika data selanjutnya ada.
+        * Memastikan fungsi load mengembalikan RemoteMediator.MediatorResult.Success.
+        * Memastikan jumlah endOfPaginationReached bernilai false.
+
+7.	StoryRepository
+    A.	Ketika berhasil mendapatkan data story:
+        * Memastikan data tidak null.
+
+
+End-to-end Test dan Idling Resources
+1.  Menampilkan List Story
+    * Memastikan RecyclerView untuk data story telah ditampilkan.
+
+2.  Menampilkan Detail Story
+    * Memastikan menuju halaman DetailActivity.
+    * Memastikan halaman detail menampilkan gambar, username, description, dan datetime.
+
+3.  Menampilkan Maps
+    * Memastikan menuju halaman MapsActivity
+    * Memastikan Map telah ditampilkan
+    * Memastikan Custom Marker telah ditampilkan
+
